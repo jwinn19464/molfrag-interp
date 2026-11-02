@@ -1,0 +1,14 @@
+torch>=2.2
+torch_geometric>=2.5
+rdkit>=2023.9
+numpy
+pandas
+scikit-learn
+matplotlib
+transformers>=4.43
+accelerate
+bitsandbytes
+huggingface_hub
+umap-learn
+scipy
+Pillow

@@ -1,0 +1,7 @@
+data/
+frag_graphs/
+checkpoints/
+*.pt
+__pycache__/
+.ipynb_checkpoints/
+gspell_*_explanations.json
