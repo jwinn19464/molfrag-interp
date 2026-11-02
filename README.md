@@ -1,7 +1,5 @@
 # Fragments to Narratives: GSPELL for Molecular Property Prediction
 
-This is my course project for CSC 8851 Deep Learning (Fall 2026).
-
 In this project I took **GSPELL** ([Baghershahi et al., 2026](https://arxiv.org/abs/2508.07117)), which is an LLM-based explainer for graph neural networks, and tried to adapt it for molecules. The original GSPELL works on node classification for text-attributed graphs, but here it is used for **graph-level** explanation instead. To do this, each molecule gets broken up into BRICS fragments, and then those fragments are used as the nodes of a graph. Each node has text attached to it (the fragment SMILES and its functional groups), so basically every molecule ends up being a small text-attributed graph. Then a GIN is trained on these fragment graphs, and a frozen Llama-3.1-8B-Instruct explains the GIN, using the GIN's embeddings as soft prompts.
 Later on, other interpretability methods, such as SHAP and GradCAM were examined. Future work could be to extend this to hypergraph neural network approaches. The motivation behind this project is to examine the reasoning behind predictions given by GNN, ML, deep learning, and other AI models used to predict molecular properties such as toxicity, blood-brain barrier penetration, and more. It is crucial to know the reasoning behind these predictions in order to ensure that models are trustworthy and reflective of reality.
 
