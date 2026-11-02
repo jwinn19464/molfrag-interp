@@ -3,19 +3,20 @@
 CSC 8851 Deep Learning (Fall 2026) course project.
 
 This project adapts **GSPELL** ([Baghershahi et al., 2026](https://arxiv.org/abs/2508.07117)), an LLM-based explainer for graph neural networks, from node classification on text-attributed graphs to **graph-level** explanation of molecules. Each molecule is split into BRICS fragments; the fragments become graph nodes carrying text (fragment SMILES and functional groups), so every molecule is a small text-attributed graph. A GIN trained on these fragment graphs is explained by a frozen Llama-3.1-8B-Instruct that receives the GIN's embeddings as soft prompts.
+Later on, other interpretability methods, such as SHAP and GradCAM were examined. Future work could be to extend this to hypergraph neural network approaches. The motivation behind this project is to examine the reasoning behind predictions given by GNN, ML, deep learning, and other AI models used to predict molecular properties such as toxicity, blood-brain barrier penetration, and more. It is crucial to know the reasoning behind these predictions in order to ensure that models are trustworthy and reflective of reality.
 
 ![Pipeline](figures/pipeline.png)
 
 ## Setup
 
-Needs Python 3.10+ and an NVIDIA GPU (CUDA). Tested target: Google Colab with an L4 GPU.
+Needs Python 3.10+ and an NVIDIA GPU (CUDA). Used Google Colab with an L4 GPU.
 
 ```bash
 pip install -r requirements.txt
 # or: conda env create -f environment.yml && conda activate frag-gspell
 ```
 
-Explanations use `meta-llama/Llama-3.1-8B-Instruct`, which is gated on Hugging Face: request access on the model page, then
+Explanations use `meta-llama/Llama-3.1-8B-Instruct`, which is gated on Hugging Face: request access on the model page (approval is usually within 24 hours), then
 
 ```bash
 export HF_TOKEN=hf_...
